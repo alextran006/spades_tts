@@ -276,7 +276,7 @@ function dealCards()
             --if the deck has more than 4 cards, cards will be dealt individually
             if object.getQuantity() > 4 then
                 for p,player in pairs(players) do
-                    object.dealToColor(1, player.name)
+                    object.dealToColorWithOffset({0,0,0}, false, player.name)
                     --a small pause to prevent game freezing for non-host players and it just looks better
                     for i=1, 3 do coroutine.yield()
                     end
@@ -288,7 +288,7 @@ function dealCards()
             --once the deck hits 4 cards, all players receive 1 card and the recursion ends
             if object.getQuantity() == 4 then
                 for p,player in pairs(players) do
-                    object.dealToColor(1, player.name)
+                    object.dealToColorWithOffset({0,0,0}, false, player.name)
                 end
             end
         end
