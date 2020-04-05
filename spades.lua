@@ -18,7 +18,7 @@ function onload()
     }
     values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"}
     --numbers indicate how many players clockwise the player is passing, 0 means no passing
-    passDirections = {1, 3, 2, 0}
+    passDirections = {0, 0, 0, 0}
     --game can be played solo (4 players individually)
     --or in teams of 2 (pairs across from each other)
     gameModes = {"solo", "team"}
@@ -899,6 +899,7 @@ function startRound()
 
     --points the arrow to the player that holds the 2 of clubs
     --also plays the 2 of clubs automatically and sets the lead suit to clubs
+    --[[
     for p,player in pairs(players) do
         for o,object in pairs(player.handZone.getObjects()) do
             if object.getName() == "2" and object.getDescription() == "club" then
@@ -910,6 +911,7 @@ function startRound()
             end
         end
     end
+    --]]
 
 return 1
 end
