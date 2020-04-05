@@ -424,7 +424,8 @@ function lockIllegalCards()
             --if the player is leading
             elseif trick.lead == nil then
                 --if the card is not a spade or is a spade and spades are broken
-                if suit ~= "spade" or (suit == "spade" and round.heartsBroken == true) or hasAllSpades(playerToLock) == true then
+		checkForOnlyHearts(playerToLock)
+                if suit ~= "spade" or (suit == "spade" and round.heartsBroken == true) then
                     object.interactable = true
                 end
             end
@@ -601,12 +602,12 @@ function checkForOnlyHearts(player)
     --check the player's hand if it contains only hearts. if so, hearts are broken to allow that player to lead
     for o,object in pairs(player.handZone.getObjects()) do
         local suit = object.getDescription()
-        if suit == "club" or suit == "diamond" or suit == "spade" then
+        if suit == "club" or suit == "diamond" or suit == "heart" then
             return
         end
     end
 
-    --round.heartsBroken = true
+    round.heartsBroken = true
 
 end
 
