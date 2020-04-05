@@ -441,7 +441,7 @@ function hasAllSpades(playerToLock)
             return 0
         end
     end
-    round.heartsBroken == true
+    round.heartsBroken = true
     return 1
 end
 
