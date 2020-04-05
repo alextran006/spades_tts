@@ -930,8 +930,13 @@ function startRound()
         end
     end
     --]]
-    setArrowOnPlayer(players[dealer])
-    players[dealer].turn = true
+    for p,player in pairs(players) do
+        if player == players[dealer] then
+            setArrowOnPlayer(player)
+            player.turn = true
+            break
+        end
+    end
     lockIllegalCards()
 return 1
 end
