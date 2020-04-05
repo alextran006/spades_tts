@@ -507,8 +507,8 @@ function takeTrick(winner)
                 object.setLock(false)
                 object.clone(winner.trickLocation)
                 object.destruct()
-                --if the trick contains a heart, hearts are broken
-                if object.getDescription() == "heart" then
+                --if the trick contains a spade, hearts are broken
+                if object.getDescription() == "spade" then
                     winner.roundScore = winner.roundScore + 1
                     round.heartsBroken = true
                 end
@@ -605,7 +605,7 @@ function checkForOnlyHearts(player)
         end
     end
 
-    round.heartsBroken = true
+    --round.heartsBroken = true
 
 end
 
