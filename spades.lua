@@ -453,6 +453,7 @@ function findTrickWinner()
                 --loops through the card ranks from 2-Ace. only the cards of the lead suit are counted
                 if object.tag == "Card" and object.getDescription() == trick.lead and object.getName() == values[v] then
                     winningPlayer = players[p]
+				end
                 if object.tag == "Card" and object.getDescription() == "spade" and object.getName() == values[v] then
                     winningPlayer = players[p]
                 end
