@@ -128,7 +128,7 @@ function onload()
         playZone = getObjectFromGUID("0ac1fd"),
         trickZone = getObjectFromGUID("3ce3c5"),
         text = getObjectFromGUID("9093c0"),
-        turn = false,
+        turn = true,
         score = 0,
         roundScore = 0,
         farthestRightCard = {14.00, 4.23, 6},
