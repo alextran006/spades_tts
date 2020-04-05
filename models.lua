@@ -78,5 +78,6 @@ function onLoad()
     self.createButton(soloOmnibusButton)
     self.createButton(teamButton)
     self.createButton(teamOmnibusButton)
+    self.createButton(lookButton)
 
 end
