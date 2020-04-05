@@ -416,27 +416,32 @@ function lockIllegalCards()
             value = object.getName()
             --if the player has no lead suit and is not leading
             if hasLeadSuit == false and trick.lead ~= nil then
-                --if the card is not a heart or Q of spades or is a heart/Q of spades and it is not the first trick
-                if suit ~= "spade" or value ~= "Q" then
-                    if suit ~= "heart" or (suit == "heart" and round.open == false) then
-                        object.interactable = true
-                    end
-                elseif suit == "spade" and value == "Q" and round.open == false then
-                    object.interactable = true
-                end
+                --All cards are legal
+                object.interactable = true
             --if the player has the lead suit
-        elseif suit == trick.lead then
+			elseif suit == trick.lead then
                 object.interactable = true
             --if the player is leading
             elseif trick.lead == nil then
-                --if the card is not a heart or is a heart and hearts are broken
-                if suit ~= "heart" or (suit == "heart" and round.heartsBroken == true) then
+                --if the card is not a spade or is a spade and spades are broken
+                if suit ~= "spade" or (suit == "spade" and round.heartsBroken == true) or hasAllSpades(playerToLock) == true then
                     object.interactable = true
                 end
             end
         end
     end
 
+end
+
+
+--function to check if the player has only spades
+function hasAllSpades(playerToLock)
+	for o,object in pairs(playerToLock.handZone.getObjects()) do
+        if object.tag == "Card" and object.getDescription() ~= "spades" then
+            return 0
+        end
+    end
+	return 1
 end
 
 --finds the winner of a trick by finding the highest card of the lead suit
