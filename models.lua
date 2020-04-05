@@ -60,6 +60,19 @@ function onLoad()
         font_color = {1, 1, 1}
     }
 
+    lookButton = {
+        click_function = "lookButtonPressed",
+        label = "look\One",
+        scale = {3, 3, 3},
+        font_size = 500,
+        width = 2000,
+        height = 1000,
+        position = {0.00, 1.1, -10.00},
+        rotation = {0, 180, 0},
+        color = {0.25, 0.25, 0.25},
+        font_color = {1, 1, 1}
+    }
+
     --create all buttons on the arrow
     self.createButton(soloButton)
     self.createButton(soloOmnibusButton)
