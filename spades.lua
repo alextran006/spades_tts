@@ -144,6 +144,7 @@ function onload()
     }
 
     players = {white, orange, green, purple}
+    dealer = 0
 
 end
 
@@ -712,6 +713,7 @@ function setNextPassDirection()
     end
 
     round.passDirection = passDirections[nextDirection]
+    dealer = dealer + 1
 
 end
 
@@ -928,6 +930,8 @@ function startRound()
         end
     end
     --]]
+    setArrowOnPlayer(players[dealer])
+    players[dealer].turn = true
     lockIllegalCards()
 return 1
 end
