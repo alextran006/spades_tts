@@ -62,7 +62,7 @@ function onLoad()
 
     lookButton = {
         click_function = "lookButtonPressed",
-        label = "look\One",
+        label = "Look",
         scale = {3, 3, 3},
         font_size = 500,
         width = 2000,
