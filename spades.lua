@@ -441,6 +441,7 @@ function hasAllSpades(playerToLock)
             return 0
         end
     end
+    round.heartsBroken == true
     return 1
 end
 
@@ -909,7 +910,6 @@ function startRound()
     round.started = true
     round.open = true
     startLuaCoroutine(Global, "sortHand")
-
     for i=1, 100 do coroutine.yield() end
 
     --points the arrow to the player that holds the 2 of clubs
@@ -927,7 +927,7 @@ function startRound()
         end
     end
     --]]
-
+    lockIllegalCards()
 return 1
 end
 
