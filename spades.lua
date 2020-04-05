@@ -441,7 +441,7 @@ function hasAllSpades(playerToLock)
             return 0
         end
     end
-	return 1
+    return 1
 end
 
 --finds the winner of a trick by finding the highest card of the lead suit
