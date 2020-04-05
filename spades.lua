@@ -454,6 +454,13 @@ function findTrickWinner()
                 if object.tag == "Card" and object.getDescription() == trick.lead and object.getName() == values[v] then
                     winningPlayer = players[p]
 				end
+            end
+        end
+    end
+	for v,value in pairs(values) do
+        for p,player in pairs(players) do
+            for o,object in pairs(player.playZone.getObjects()) do
+                --loops through the card ranks from 2-Ace. only the cards of the spades are counted
                 if object.tag == "Card" and object.getDescription() == "spade" and object.getName() == values[v] then
                     winningPlayer = players[p]
                 end
